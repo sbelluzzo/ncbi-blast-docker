@@ -22,17 +22,21 @@ Installation and use of a tool wrapper (links to follow) specifying one of these
 
 ### General Use
 1. Download an [automated build](https://registry.hub.docker.com/u/simonalpha/ncbi-blast-docker/) from public [Docker Hub Registry](https://registry.hub.docker.com/):
+
    `docker pull simonalpha/ncbi-blast-docker`
 
    Specific versions can be specified via tagging, for instance:
+
    `docker pull simonalpha/ncbi-blast-docker:2.2.30plus`
 
 2. Run an instance of the image, mounting in directories with the required sequences/databases/files and setting the working directory as appropriate. If no program is specified, the default behaviour is to drop you into a shell in your working directory.
+
    `docker run --rm -v /home/simonalpha/project:/blast -v /databases:/db -w /blast simonalpha/ncbi-blast-docker`
 
    All the BLAST binaries in the default distribution are available and on the path, and you can run BLAST as usual.
 
    Another option is to provide a BLAST invocation when starting a container; much more useful for scripting! Ensure your BLAST invocation uses the paths you are mounting to in the container.
+
    `docker run --rm -v /home/simonalpha/project:/blast -v /databases:/db -w /blast simonalpha/ncbi-blast-docker blastp -query /blast/q_seq.faa -db /db/prot_db -out q_seq_V_prot_db`
 
 The above is based strongly on how Galaxy uses Docker containers, however other methods are definitely possible. If you come across any, please do let us know.
