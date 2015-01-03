@@ -8,6 +8,7 @@ The `simonalpha/ncbi-blast-docker` repository provides Dockerfiles for a number 
 [Docker Hub Registry](https://registry.hub.docker.com).
 
 The available tags are:
+
 - latest (default): NCBI BLAST+ 2.2.30+ (aliased to 2.2.30plus)
 - 2.2.30plus: NCBI BLAST+ 2.2.30+
 - 2.2.29plus: NCBI BLAST+ 2.2.29+
